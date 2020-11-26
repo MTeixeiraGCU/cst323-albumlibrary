@@ -8,12 +8,15 @@
  * Nov 24, 2020
  */
 
+
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/UserDataAccessService.php';
+
 class UserBusinessService {
     
-    public function loginUser($userName, $password) {
+    public function loginUser($email, $password) {
         $das = new UserDataAccessService();
         
-        $id = $das->getUser($userName, $password);
+        $id = $das->getUser($email, $password);
         return $id;
     }
     

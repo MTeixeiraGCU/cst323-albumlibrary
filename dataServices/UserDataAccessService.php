@@ -8,18 +8,20 @@
  * Nov 24, 2020
  */
 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/DataAccessService.php';
+
 class UserDataAccessService
 {
     //methods
-    public function getUser($userName, $password) {
+    public function getUser($email, $password) {
         
         $das = new DataAccessService();
         
         $conn = $das->getConnection();
         
-        if($stmt = $conn->prepare("SELECT * FROM users WHERE USERNAME LIKE ? AND PASSWORD LIKE BINARY ?")) {
+        if($stmt = $conn->prepare("SELECT * FROM users WHERE EMAIL LIKE ? AND PASSWORD LIKE BINARY ?")) {
             
-            $stmt->bind_param("ss", $userName, $password);
+            $stmt->bind_param("ss", $email, $password);
             $stmt->execute();
             $result = $stmt->get_result();
             $stmt->close();
@@ -33,15 +35,15 @@ class UserDataAccessService
         
         if(!$result) {
             $conn->close();
-            return -1;
+            return null;
         }
         else if($result->num_rows == 1) {
             $conn->close();
-            return $result->fetch_assoc()["ID"];
+            return $result->fetch_assoc();
         }
         else {
             $conn->close();
-            return -1;
+            return null;
         }
     }
 }

@@ -1,5 +1,4 @@
 <?php
-namespace businessServices\model;
 
 /**
  * Album.php

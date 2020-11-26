@@ -14,7 +14,7 @@ class DataAccessService
     private $dbServerName = "localhost";
     private $dbUsername = "root";
     private $dbPassword = "root";
-    private $dbName = "cst_323_project";
+    private $dbName = "cst323_clcproject";
     
     //methods
     public function getConnection() {

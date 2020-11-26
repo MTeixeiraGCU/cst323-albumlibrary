@@ -1,5 +1,4 @@
 <?php
-namespace businessServices\model;
 
 /**
  * User.php
@@ -14,16 +13,14 @@ class User {
    private $email;
    private $dob;
    private $role;
-   private $bio;
 
    //constructor
-   public function __construct($userName, $password, $email, $dob, $role, $bio) {
+   public function __construct($userName, $password, $email, $dob, $role) {
        $this->userName = $userName;
        $this->password = $password;
        $this->email = $email;
        $this->dob = $dob;
        $this->role = $role;
-       $this->bio = $bio;
    }
    
    //getters / setters
@@ -68,14 +65,6 @@ class User {
    }
    
    /**
-    * @return mixed
-    */
-   public function getBio()
-   {
-       return $this->bio;
-   }
-   
-   /**
     * @param mixed $userName
     */
    public function setUserName($userName)
@@ -113,14 +102,6 @@ class User {
    public function setRole($role)
    {
        $this->role = $role;
-   }
-   
-   /**
-    * @param mixed $bio
-    */
-   public function setBio($bio)
-   {
-       $this->bio = $bio;
    }
    
 }
