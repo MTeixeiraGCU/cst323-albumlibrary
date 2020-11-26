@@ -14,15 +14,17 @@ class Album
     private $description;
     private $rating;
     private $artist;
+    private $imgLink;
 
     //constructor
-    public function __construct($albumTitle, $postTime, $description, $rating, $artist)
+    public function __construct($albumTitle, $postTime, $description, $rating, $artist, $imgLink)
     {
         $this->albumTitle = $albumTitle;
         $this->postTime = $postTime;
         $this->description = $description;
         $this->rating = $rating;
         $this->artist = $artist;
+        $this->imgLink = $imgLink;
     }
     
     //getters / setters
@@ -67,6 +69,14 @@ class Album
     }
     
     /**
+     * @return mixed
+     */
+    public function getImgLink()
+    {
+        return $this->imgLink;
+    }
+    
+    /**
      * @param mixed $albumTitle
      */
     public function setAlbumTitle($albumTitle)
@@ -105,6 +115,16 @@ class Album
     {
         $this->artist = $artist;
     }
+    
+    /**
+     * @param mixed $artist
+     */
+    public function setImgLink($imgLink)
+    {
+        $this->imgLink = $imgLink;
+    }
+    
+    
 }
 
 ?>

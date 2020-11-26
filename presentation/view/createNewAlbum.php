@@ -1,5 +1,5 @@
 <?php
-#include_once "_navbar.php";
+include_once "_navbar.php";
 ?>
 
 
@@ -11,7 +11,6 @@
   </div>
 </div>
 
-<form>
 <form>
   <div class="form-group">
     <label for="albumArt">Album Art</label>
