@@ -1,27 +1,26 @@
 <?php
-
 /**
- * UserDataAccessService.php
- * Description: handles all the data information for users
+ * AlbumDataAccessService.php
+ * Description: handles all the data information for albums
  *
  * @author Marc Teixeira
- * Nov 24, 2020
+ * Nov 27, 2020
  */
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/DataAccessService.php';
 
-class UserDataAccessService
-{
+class AlbumDataAccessService {
+    
     //CRUD methods
-    public function getUser($email, $password) {
+    public function getAlbums($email) {
         
         $das = new DataAccessService();
         
         $conn = $das->getConnection();
         
-        if($stmt = $conn->prepare("SELECT * FROM `users` WHERE EMAIL LIKE ? AND PASSWORD LIKE BINARY ?")) {
+        if($stmt = $conn->prepare("SELECT * FROM `albums` WHERE USER_EMAIL LIKE ?")) {
             
-            $stmt->bind_param("ss", $email, $password);
+            $stmt->bind_param("s", $email);
             $stmt->execute();
             $result = $stmt->get_result();
             $stmt->close();
@@ -33,29 +32,30 @@ class UserDataAccessService
             exit();
         }
         
-        if(!$result) {
+        if(!$result) { //failed to find any albums
             $conn->close();
             return null;
         }
-        else if($result->num_rows == 1) {
+        else if($result->num_rows > 0) { //gather array of albums
+            $albums = array();
+            
+            while($album = $result->fetch_assoc()) {
+                array_push($albums, $album);
+            }
             $conn->close();
-            return $result->fetch_assoc();
-        }
-        else {
-            $conn->close();
-            return null;
+            return $albums;
         }
     }
     
-    public function insertUser($email, $userName, $password, $dob, $role) {
+    public function insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink) {
         $das = new DataAccessService();
         
         $conn = $das->getConnection();
         
-        $query = "INSERT INTO `users` (EMAIL, USERNAME, PASSWORD, DOB, ROLE) VALUES (?, ?, ?, ?, ?)";
+        $query = "INSERT INTO `albums` (ALBUM_TITLE, POST_TIME, DESCRIPTION, RATING, ARTIST, IMG_LINK, USER_EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         if($stmt = $conn->prepare($query)) {
-            $stmt->bind_param('sssss', $email, $userName, $password, $dob, $role);
+            $stmt->bind_param('sssssss', $albumTitle, $postTime, $description, $rating, $artist, $imgLink, $email);
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
@@ -70,15 +70,15 @@ class UserDataAccessService
         }
     }
     
-    public function updateUser($email, $userName, $password, $dob, $role) {
+    public function updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new DataAccessService();
         
         $conn = $das->getConnection();
         
-        $query = "UPDATE `users` SET USERNAME = ?, PASSWORD = ?, DOB = ?, ROLE = ? WHERE EMAIL = ?";
+        $query = "UPDATE `albums` SET ALBUM_TITLE = ?, POST_TIME = ?, DESCRIPTION = ?, RATING = ?, ARTIST =  ?, IMG_LINK = ? WHERE USER_EMAIL = ? AND ID = ?";
         
         if($stmt = $conn->prepare($query)) {
-            $stmt->bind_param('sssss', $email, $userName, $password, $dob, $role);
+            $stmt->bind_param('sssssssi', $albumTitle, $postTime, $description, $rating, $artist, $imgLink, $email, $id);
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
@@ -93,15 +93,15 @@ class UserDataAccessService
         }
     }
     
-    public function deleteUser($email) {
+    public function deleteUser($email, $id) {
         $das = new DataAccessService();
         
         $conn = $das->getConnection();
         
-        $query = "DELETE FROM `users` WHERE EMAIL = ?";
+        $query = "DELETE FROM `ablums` WHERE USER_EMAIL = ? AND ID = ?";
         
         if($stmt = $conn->prepare($query)) {
-            $stmt->bind_param('s', $email);
+            $stmt->bind_param('si', $email, $id);
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
@@ -115,4 +115,5 @@ class UserDataAccessService
             return false;
         }
     }
+    
 }
