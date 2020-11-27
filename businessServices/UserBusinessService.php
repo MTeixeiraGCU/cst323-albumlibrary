@@ -16,9 +16,41 @@ class UserBusinessService {
     public function loginUser($email, $password) {
         $das = new UserDataAccessService();
         
-        $id = $das->getUser($email, $password);
-        return $id;
+        $email = $das->getUser($email, $password);
+        return $email;
     }
     
+    public function registerUser($email, $userName, $password, $dob, $role) {
+        $das = new UserDataAccessService();
+   
+        if($das->insertUser($email, $userName, $password, $dob, $role)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    public function updateUser($email, $userName, $password, $dob, $role) {
+        $das = new UserDataAccessService();
+        
+        if($das->updateUser($email, $userName, $password, $dob, $role)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    public function deleteUser($email) {
+        $das = new UserDataAccessService();
+        
+        if($das->deleteUser($email)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
 ?>

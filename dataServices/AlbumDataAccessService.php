@@ -12,15 +12,20 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/DataAccessService.php';
 class AlbumDataAccessService {
     
     //CRUD methods
-    public function getAlbums($email) {
+    public function getAlbums($email, $albumTitle, $description, $artist) {
         
         $das = new DataAccessService();
         
         $conn = $das->getConnection();
         
-        if($stmt = $conn->prepare("SELECT * FROM `albums` WHERE USER_EMAIL LIKE ?")) {
+        //adjust patterns to wildcards
+        $albumTitlePattern = '%' . $albumTitle . '%';
+        $descriptionPattern = '%' . $description . '%';
+        $artistPattern = '%' . $artist . '%';
+        
+        if($stmt = $conn->prepare("SELECT * FROM `albums` WHERE USER_EMAIL LIKE ? AND ALBUM_TITLE LIKE ? AND DESCRIPTION LIKE ? AND ARTIST LIKE ?")) {
             
-            $stmt->bind_param("s", $email);
+            $stmt->bind_param("ssss", $email, $artistPattern, $descriptionPattern, $artistPattern);
             $stmt->execute();
             $result = $stmt->get_result();
             $stmt->close();
@@ -55,7 +60,7 @@ class AlbumDataAccessService {
         $query = "INSERT INTO `albums` (ALBUM_TITLE, POST_TIME, DESCRIPTION, RATING, ARTIST, IMG_LINK, USER_EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         if($stmt = $conn->prepare($query)) {
-            $stmt->bind_param('sssssss', $albumTitle, $postTime, $description, $rating, $artist, $imgLink, $email);
+            $stmt->bind_param('sssisss', $albumTitle, $postTime, $description, $rating, $artist, $imgLink, $email);
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
@@ -78,7 +83,7 @@ class AlbumDataAccessService {
         $query = "UPDATE `albums` SET ALBUM_TITLE = ?, POST_TIME = ?, DESCRIPTION = ?, RATING = ?, ARTIST =  ?, IMG_LINK = ? WHERE USER_EMAIL = ? AND ID = ?";
         
         if($stmt = $conn->prepare($query)) {
-            $stmt->bind_param('sssssssi', $albumTitle, $postTime, $description, $rating, $artist, $imgLink, $email, $id);
+            $stmt->bind_param('sssisssi', $albumTitle, $postTime, $description, $rating, $artist, $imgLink, $email, $id);
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
