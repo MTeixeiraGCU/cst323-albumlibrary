@@ -51,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //check for a duplicate user
         
         if($bs->registerUser($user->getEmail(), $user->getUserName(), $user->getPassword(), $user->getDob(), $user->getRole())) { //successful check of registration
-            $_SESSION["User"] = $user;
             header('Location: /presentation/view/registrationComplete.php');
         }
         else {  //user already exists
