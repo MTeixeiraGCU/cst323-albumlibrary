@@ -37,7 +37,7 @@ require_once 'autoloader.php';
                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="/presentation/view/registration.php">Register</a>
+            <a href="/CST-323-CLC-Project/presentation/view/registration.php">Register</a>
         </form>
     </div>
 

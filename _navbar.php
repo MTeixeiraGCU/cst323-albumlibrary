@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="<?php if(isset($_SESSION['UserEmail'])) { echo "/CST-323-CLC-Project//presentation/view/library.php"; } else { echo "/index.php"; } ?>">Home</a>
+  <a class="navbar-brand" href="<?php if(isset($_SESSION['UserEmail'])) { echo "/CST-323-CLC-Project/presentation/view/library.php"; } else { echo "/index.php"; } ?>">Home</a>
 }
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
