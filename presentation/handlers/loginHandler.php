@@ -41,7 +41,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.
             if(!is_null($loggedUser)) {  //successful login
                 $_SESSION['UserEmail'] = $user->getEmail();
                 $_SESSION['LoggedIn'] = true;
-                header("Location: /presentation/handlers/libraryHandler.php");
+                header("Location: /presentation/view/library.php");
             } 
             else {          //failed login
                 session_end();

@@ -1,6 +1,7 @@
 <?php
 require_once '../../autoloader.php';
 require_once '../../header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/libraryHandler.php';
 ?>
 
 <h1>Your Library</h1>
