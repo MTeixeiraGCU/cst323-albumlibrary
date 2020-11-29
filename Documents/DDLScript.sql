@@ -9,6 +9,21 @@ CREATE SCHEMA IF NOT EXISTS `cst323_clcproject` DEFAULT CHARACTER SET utf8 ;
 USE `cst323_clcproject` ;
 
 -- -----------------------------------------------------
+-- Table `users`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `users` ;
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `EMAIL` VARCHAR(45) NOT NULL,
+  `USERNAME` VARCHAR(45) NOT NULL,
+  `PASSWORD` VARCHAR(45) NOT NULL,
+  `DOB` VARCHAR(45) NULL DEFAULT NULL,
+  `ROLE` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`EMAIL`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+-- -----------------------------------------------------
 -- Table `albums`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `albums` ;
@@ -28,22 +43,6 @@ CREATE TABLE IF NOT EXISTS `albums` (
     REFERENCES `users` (`EMAIL`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `users`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `users` ;
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `EMAIL` VARCHAR(45) NOT NULL,
-  `USERNAME` VARCHAR(45) NOT NULL,
-  `PASSWORD` VARCHAR(45) NOT NULL,
-  `DOB` VARCHAR(45) NULL DEFAULT NULL,
-  `ROLE` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`EMAIL`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
