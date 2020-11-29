@@ -1,6 +1,6 @@
 <?php
-include_once "_navbar.php";
-
+require_once '../../autoloader.php';
+require_once '../../header.php';
 ?>
 <head>
     <!-- Required meta tags -->

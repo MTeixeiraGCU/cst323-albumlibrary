@@ -1,3 +1,8 @@
+<?php 
+require_once 'header.php';
+require_once 'autoloader.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
