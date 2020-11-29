@@ -11,6 +11,7 @@ require_once '../../header.php';
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" -->
         <!-- integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
 <!-- </head> --> 
+
 <!-- This section is going to need a handler that will return all database entries for albums and fill a card out for each.  -->
 
 <div class="card" style="width: 18rem;">

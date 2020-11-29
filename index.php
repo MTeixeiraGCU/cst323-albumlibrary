@@ -16,7 +16,7 @@ require_once 'autoloader.php';
         integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 
-<body>
+<body id="form-style">
 
 
     <div class="container-fluid padding">
@@ -37,6 +37,7 @@ require_once 'autoloader.php';
                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/presentation/view/registration.php">Register</a>
         </form>
     </div>
 

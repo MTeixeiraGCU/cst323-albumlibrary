@@ -13,8 +13,9 @@ require_once '../../header.php';
 <!-- </head> --> 
 <body>
 
+
 <div class="card" style="width: 18rem;">
-  <img src="#" class="card-img-top" alt="...">
+  <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Example Album Tile</h5>
     <p class="card-text">Some quick example text to build on the album and make up the bulk of the album's content.</p>
@@ -70,5 +71,3 @@ require_once '../../header.php';
   
     
 </form>
-
-</body>
