@@ -1,7 +1,7 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/businessServices/model/User.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/businessServices/UserBusinessService.php';
 
 // define error message variables and set to empty values
 $userNameRegErr = $passwordRegErr = $password2RegErr = $emailRegErr = "";
@@ -51,16 +51,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //check for a duplicate user
         
         if($bs->registerUser($user->getEmail(), $user->getUserName(), $user->getPassword(), $user->getDob(), $user->getRole())) { //successful check of registration
-            header('Location: /presentation/view/registrationComplete.php');
+            header('Location: /CST-323-CLC-Project/presentation/view/registrationComplete.php');
         }
         else {  //user already exists
             $regMessageErr = "There was a problem during registration.";
-            include $_SERVER['DOCUMENT_ROOT'] . '/presentation/view/registration.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/presentation/view/registration.php';
             exit();
         }
     }
     else { //not ready to move to next form
-        include $_SERVER['DOCUMENT_ROOT'] . '/presentation/view/registration.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/presentation/view/registration.php';
     }
 }
 ?>

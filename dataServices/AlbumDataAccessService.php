@@ -7,7 +7,7 @@
  * Nov 27, 2020
  */
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/DataAccessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/dataServices/DataAccessService.php';
 
 class AlbumDataAccessService {
     

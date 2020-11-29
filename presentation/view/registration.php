@@ -1,19 +1,18 @@
 <?php
-    require_once '../../autoloader.php';
-    require_once '../../header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/header.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="/presentation/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/CST-323-CLC-Project/presentation/css/style.css">
 		<title>Registration</title>
 	</head>
-	
 	<body id="form-style">
-		<div class="form-signin">
-            <form action="/presentation/handlers/registrationHandler.php" method="POST">
+		<span class="form-signin">
+            <form action="/CST-323-CLC-Project/presentation/handlers/registrationHandler.php" method="POST">
             	<h2>Register New Account</h2>
 
               <div class="form-group">
@@ -41,7 +40,7 @@
               </div>
               
             </form>
-        </div>
+        </span>
     </body>
     
 </html>

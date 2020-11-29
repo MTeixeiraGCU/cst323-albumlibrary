@@ -18,10 +18,9 @@ require_once 'autoloader.php';
 
 <body id="form-style">
 
-
     <div class="container-fluid padding">
         <img class="img-fluid" src="presentation/media/headphones.jpg" alt="headphones">
-        <form action="/presentation/handlers/loginHandler.php" method="POST">
+        <form action="/CST-323-CLC-Project/presentation/handlers/loginHandler.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
