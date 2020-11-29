@@ -6,8 +6,6 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.php';
-
-    session_start();
     
     // define error message variables and set to empty values for use on form
     $userNameErr = $passwordErr = "";
@@ -44,7 +42,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.
                 header("Location: /presentation/view/library.php");
             } 
             else {          //failed login
-                session_end();
                 $loginMessageErr = "The email or password is incorrect. Please try again.";
                 include $_SERVER['DOCUMENT_ROOT'] . '/index.php';
                 exit();

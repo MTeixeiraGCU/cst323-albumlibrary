@@ -2,9 +2,8 @@
     require_once '../../autoloader.php';
     require_once '../../header.php';
     
-    if(isset($_SESSION['LoggedIn'])) {
-        $_SESSION['LoggedIn'] = false;
-        session_end();
+    if(isset($_SESSION['UserEmail'])) {
+        session_destroy();
     }
 ?>
 
