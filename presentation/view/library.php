@@ -14,7 +14,7 @@ foreach($albums as $album) {
 <div class="row" style="width: 100%; margin: auto;">
 
 <?php 
-    for($i = 0; $i <= 2; $i++) {
+    for($i = 0; $i < 1; $i++) {
 
         echo "<div class='card' style='width: 18rem; margin: auto;'>";
         echo "  <img src='/CST-323-CLC-Project/presentation/media/" . $album['IMG_LINK'] . "' class='card-img-top' alt='...'>";
