@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/presentation/handlers/libraryHandler.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/libraryHandler.php';
 ?>
 
 <h1>Your Library</h1>
@@ -17,7 +17,7 @@ foreach($albums as $album) {
     for($i = 0; $i < 1; $i++) {
 
         echo "<div class='card' style='width: 18rem; margin: auto;'>";
-        echo "  <img src='/CST-323-CLC-Project/presentation/media/" . $album['IMG_LINK'] . "' class='card-img-top' alt='...'>";
+        echo "  <img src='/presentation/media/" . $album['IMG_LINK'] . "' class='card-img-top' alt='...'>";
         echo "  <div class='card-body'>";
         echo "      <h5 class='card-title'>" . $album['ALBUM_TITLE'] . "</h5>";
         echo "      <p class='card-text'>Release Date: " . $album['POST_TIME'] . "</p>";

@@ -9,7 +9,7 @@
  */
 
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/dataServices/UserDataAccessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/UserDataAccessService.php';
 
 class UserBusinessService {
     

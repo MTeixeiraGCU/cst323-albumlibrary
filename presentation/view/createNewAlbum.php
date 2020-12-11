@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/header.php';
-//include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/presentation/handlers/createNewAlbumHandler.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+//include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/createNewAlbumHandler.php';
 ?>
 <!-- <head> -->
     <!-- Required meta tags -->

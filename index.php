@@ -9,8 +9,8 @@ require_once 'autoloader.php';
 <body id="form-style">
 
     <div class="d-flex justify-content-center">
-        <img class="img-fluid" src="presentation/media/headphones.jpg" alt="headphones">
-        <form action="/CST-323-CLC-Project/presentation/handlers/loginHandler.php" method="POST">
+        <img class="img-fluid" src="/presentation/media/headphones.jpg" alt="headphones">
+        <form action="/presentation/handlers/loginHandler.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -26,7 +26,7 @@ require_once 'autoloader.php';
                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="/CST-323-CLC-Project/presentation/view/registration.php">Register</a>
+            <a href="/presentation/view/registration.php">Register</a>
         </form>
     </div>
 

@@ -4,8 +4,8 @@
 
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/businessServices/model/User.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/businessServices/UserBusinessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.php';
     
     // define error message variables and set to empty values for use on form
     $userNameErr = $passwordErr = "";
@@ -39,18 +39,18 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/businessServices/
             if(!is_null($loggedUser)) {  //successful login
                 $_SESSION['UserEmail'] = $user->getEmail();
                 $_SESSION['LoggedIn'] = true;
-                header("Location: /CST-323-CLC-Project/presentation/view/library.php");
+                header("Location: /presentation/view/library.php");
             } 
             else {          //failed login
                 $loginMessageErr = "The email or password is incorrect. Please try again.";
-                include $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/index.php';
+                include $_SERVER['DOCUMENT_ROOT'] . '/index.php';
                 exit();
             }
                           
         }  
         else { //not ready
             $loginMessageErr = "";
-            include $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/index.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/index.php';
         }
     }
 ?>

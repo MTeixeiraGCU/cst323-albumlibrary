@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CST-323-CLC-Project/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
 <!-- <head> -->
     <!-- Required meta tags -->
