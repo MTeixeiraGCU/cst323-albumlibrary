@@ -39,7 +39,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.
             if(!is_null($loggedUser)) {  //successful login
                 $_SESSION['UserEmail'] = $user->getEmail();
                 $_SESSION['LoggedIn'] = true;
-                header("Location: /presentation/view/library.php");
+                header("Location: " . $_SERVER['DOCUMENT_ROOT'] . "/presentation/view/library.php");
             } 
             else {          //failed login
                 $loginMessageErr = "The email or password is incorrect. Please try again.";
