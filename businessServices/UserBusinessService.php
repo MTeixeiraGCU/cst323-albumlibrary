@@ -9,9 +9,13 @@
  */
 
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/UserDataAccessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . 'autoloader.php';
 
 class UserBusinessService {
+    
+    public function __construct() {
+        $this = new ActivityLogger($this);
+    }
     
     public function loginUser($email, $password) {
         $das = new UserDataAccessService();

@@ -8,9 +8,13 @@
  */
 
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/dataServices/AlbumDataAccessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . 'autoloader.php';
 
 class AlbumBusinessService {
+    
+    public function __construct() {
+        $this = new ActivityLogger($this);
+    }
     
     public function getAlbums($email) {
         $das = new AlbumDataAccessService();
@@ -32,6 +36,17 @@ class AlbumBusinessService {
         return $das->getAlbums($email, $albumTitle, $description, $artist);
     }
     
+    /**
+     * This method sends data to the database to create a new album
+     * @param unknown $email
+     * @param unknown $albumTitle
+     * @param unknown $postTime
+     * @param unknown $description
+     * @param unknown $rating
+     * @param unknown $artist
+     * @param unknown $imgLink
+     * @return boolean
+     */
     public function createAlbum($email, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new AlbumDataAccessService();
         
@@ -43,7 +58,18 @@ class AlbumBusinessService {
         }
     }
     
-    //REQUIRES ALBUM ID NUMBER
+    /**
+     * This method updates an existing album with the provided data (REQUIRES ALBUM ID)
+     * @param unknown $email
+     * @param unknown $id
+     * @param unknown $albumTitle
+     * @param unknown $postTime
+     * @param unknown $description
+     * @param unknown $rating
+     * @param unknown $artist
+     * @param unknown $imgLink
+     * @return boolean
+     */
     public function updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new AlbumDataAccessService();
         
@@ -55,7 +81,18 @@ class AlbumBusinessService {
         }
     }
     
-    //REQUIRES ALBUM ID NUMBER
+    /**
+     * This method deletes an album from the database with the given ID
+     * @param unknown $email
+     * @param unknown $id
+     * @param unknown $albumTitle
+     * @param unknown $postTime
+     * @param unknown $description
+     * @param unknown $rating
+     * @param unknown $artist
+     * @param unknown $imgLink
+     * @return boolean
+     */
     public function deleteAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new AlbumDataAccessService();
         
