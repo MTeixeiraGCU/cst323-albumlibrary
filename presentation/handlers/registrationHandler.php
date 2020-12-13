@@ -1,6 +1,6 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 
 // define error message variables and set to empty values
 $userNameRegErr = $passwordRegErr = $password2RegErr = $emailRegErr = "";
