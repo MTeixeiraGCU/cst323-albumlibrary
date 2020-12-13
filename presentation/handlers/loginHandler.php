@@ -5,6 +5,7 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User';
     
     // define error message variables and set to empty values for use on form
     $userNameErr = $passwordErr = "";
