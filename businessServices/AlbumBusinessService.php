@@ -12,12 +12,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . 'autoloader.php';
 
 class AlbumBusinessService {
     
-    public function __construct() {
-        $this = new ActivityLogger($this);
-    }
-    
     public function getAlbums($email) {
         $das = new AlbumDataAccessService();
+        $das = new ActivityLogger($das);
         
         return $das->getAlbums($email, "", "", "");
     }
@@ -32,6 +29,7 @@ class AlbumBusinessService {
      */
     public function searchAlbums($email, $albumTitle = "", $description = "", $artist = "") {
         $das = new AlbumDataAccessService();
+        $das = new ActivityLogger($das);
         
         return $das->getAlbums($email, $albumTitle, $description, $artist);
     }
@@ -49,6 +47,7 @@ class AlbumBusinessService {
      */
     public function createAlbum($email, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new AlbumDataAccessService();
+        $das = new ActivityLogger($das);
         
         if($das->insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink)){
             return true;
@@ -72,6 +71,7 @@ class AlbumBusinessService {
      */
     public function updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new AlbumDataAccessService();
+        $das = new ActivityLogger($das);
         
         if($das->updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink)){
             return true;
@@ -95,6 +95,7 @@ class AlbumBusinessService {
      */
     public function deleteAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new AlbumDataAccessService();
+        $das = new ActivityLogger($das);
         
         if($das->deleteAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink)){
             return true;

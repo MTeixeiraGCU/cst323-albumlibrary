@@ -1,11 +1,10 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/Album.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/AlbumBusinessService.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 
 if(isset($_SESSION['UserEmail'])) {
     $bs = new AlbumBusinessService();
+    $bs = new ActivityLogger($bs);
     
     $albums = $bs->getAlbums($_SESSION['UserEmail']);
     

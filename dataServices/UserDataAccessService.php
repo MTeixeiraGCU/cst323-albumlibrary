@@ -16,6 +16,7 @@ class UserDataAccessService
     public function getUser($email, $password) {
         
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         
@@ -49,6 +50,7 @@ class UserDataAccessService
     
     public function insertUser($email, $userName, $password, $dob, $role) {
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         
@@ -72,6 +74,7 @@ class UserDataAccessService
     
     public function updateUser($email, $userName, $password, $dob, $role) {
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         
@@ -95,6 +98,7 @@ class UserDataAccessService
     
     public function deleteUser($email) {
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         

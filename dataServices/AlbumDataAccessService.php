@@ -15,6 +15,7 @@ class AlbumDataAccessService {
     public function getAlbums($email, $albumTitle, $description, $artist) {
         
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         
@@ -54,6 +55,7 @@ class AlbumDataAccessService {
     
     public function insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink) {
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         
@@ -77,6 +79,7 @@ class AlbumDataAccessService {
     
     public function updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         
@@ -100,6 +103,7 @@ class AlbumDataAccessService {
     
     public function deleteUser($email, $id) {
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         

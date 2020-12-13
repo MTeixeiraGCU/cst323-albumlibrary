@@ -4,8 +4,7 @@
 
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
     
     // define error message variables and set to empty values for use on form
     $userNameErr = $passwordErr = "";
@@ -33,6 +32,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.
             session_start();
             
             $bs = new UserBusinessService();
+            $bs = new ActivityLogger($bs);
 
             $loggedUser = $bs->loginUser($user->getEmail(), $user->getPassword());
             

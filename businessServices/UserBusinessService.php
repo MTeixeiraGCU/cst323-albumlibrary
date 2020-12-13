@@ -13,12 +13,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . 'autoloader.php';
 
 class UserBusinessService {
     
-    public function __construct() {
-        $this = new ActivityLogger($this);
-    }
-    
     public function loginUser($email, $password) {
         $das = new UserDataAccessService();
+        $das = new ActivityLogger($das);
         
         $email = $das->getUser($email, $password);
         return $email;
@@ -26,6 +23,7 @@ class UserBusinessService {
     
     public function registerUser($email, $userName, $password, $dob, $role) {
         $das = new UserDataAccessService();
+        $das = new ActivityLogger($das);
    
         if($das->insertUser($email, $userName, $password, $dob, $role)) {
             return true;
@@ -37,6 +35,7 @@ class UserBusinessService {
     
     public function updateUser($email, $userName, $password, $dob, $role) {
         $das = new UserDataAccessService();
+        $das = new ActivityLogger($das);
         
         if($das->updateUser($email, $userName, $password, $dob, $role)) {
             return true;
@@ -48,6 +47,7 @@ class UserBusinessService {
     
     public function deleteUser($email) {
         $das = new UserDataAccessService();
+        $das = new ActivityLogger($das);
         
         if($das->deleteUser($email)) {
             return true;

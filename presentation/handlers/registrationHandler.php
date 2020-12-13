@@ -1,7 +1,6 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 
 // define error message variables and set to empty values
 $userNameRegErr = $passwordRegErr = $password2RegErr = $emailRegErr = "";
@@ -47,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if($ready) {
         $bs = new UserBusinessService();
+        $bs = new ActivityLogger($bs);
         
         //check for a duplicate user
         
