@@ -4,8 +4,6 @@
 
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/model/User.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/businessServices/UserBusinessService.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
     
     // define error message variables and set to empty values for use on form

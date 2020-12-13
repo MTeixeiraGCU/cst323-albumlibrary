@@ -8,8 +8,20 @@ use Monolog\Handler\StreamHandler;
 
 class ActivityLogger extends AbstractActivityLogger {
     
+    public function before($object, $method, $args) {
+        $this->logger->info("Attempt to call: " . get_class($object)  . " method: ". $method . "\n");
+        $value = $this->callMethod($method, $args);
+        return $value;
+    }
+    
     public function around($object, $method, $args) {
         $this->logger->info("Running: " . get_class($object)  . " method: ". $method . "\n");
+        $value = $this->callMethod($method, $args);
+        return $value;
+    }
+    
+    public function after($object, $method, $args) {
+        $this->logger->info("Exiting: " . get_class($object)  . " method: ". $method . "\n");
         $value = $this->callMethod($method, $args);
         return $value;
     }
