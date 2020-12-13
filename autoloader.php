@@ -10,7 +10,7 @@ spl_autoload_register(function($class){
     // echo "lastdirectories = : " . $lastDirectories . "<br>";
 
     // count number of slashes (folder depth)
-    $numberOfLastDirectories = substr_count($lastDirectories, '\\');
+    $numberOfLastDirectories = substr_count($lastDirectories, '/');
 
     // echo "number of directories different : " . $numberOfLastDirectories . "<br>";
 
