@@ -16,6 +16,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
         $ready = true; //we have been through the form at least once and need to populate it with values
 
         $user = new User("", $_POST["password"], $_POST["email"], "", "");
+        $user = new ActivityLogger($user);
 
         if (empty($user->getEmail())) {
             $userNameErr = "* Email is required!";
