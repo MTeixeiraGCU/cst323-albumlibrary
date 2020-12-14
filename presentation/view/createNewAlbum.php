@@ -16,7 +16,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
 
 <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="/presentation/media/noimage.png" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Example Album Tile</h5>
     <p class="card-text">Some quick example text to build on the album and make up the bulk of the album's content.</p>
