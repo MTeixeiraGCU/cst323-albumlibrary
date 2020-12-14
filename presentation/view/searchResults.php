@@ -1,7 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/searchHandler.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/searchResultsHandler.php';
 ?>
 
 <h1>Your Search Results</h1>

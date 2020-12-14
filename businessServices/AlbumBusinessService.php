@@ -13,10 +13,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 class AlbumBusinessService {
     
     public function getAlbums($email) {
-        $das = new AlbumDataAccessService();
-        $das = new ActivityLogger($das);
-        
-        return $das->getAlbums($email, "", "", "");
+        $this->searchAlbums($email);
     }
     
     /**
