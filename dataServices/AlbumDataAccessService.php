@@ -24,7 +24,7 @@ class AlbumDataAccessService {
         $descriptionPattern = '%' . $description . '%';
         $artistPattern = '%' . $artist . '%';
         
-        if($stmt = $conn->prepare("SELECT * FROM `albums` WHERE USER_EMAIL LIKE ? AND ALBUM_TITLE LIKE ? AND DESCRIPTION LIKE ? AND ARTIST LIKE ?")) {
+        if($stmt = $conn->prepare("SELECT * FROM `albums` WHERE USER_EMAIL LIKE ? AND (ALBUM_TITLE LIKE ? OR DESCRIPTION LIKE ? OR ARTIST LIKE ?)")) {
             
             $stmt->bind_param("ssss", $email, $artistPattern, $descriptionPattern, $artistPattern);
             $stmt->execute();
