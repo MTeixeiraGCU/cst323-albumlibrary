@@ -27,10 +27,14 @@ class ActivityLogger extends AbstractActivityLogger {
     }
     
     public static function error($message) {
-        $this->logger->error("Error: " . $message . "\n");
+        $this->logger = new Logger('activity_logger');
+        $this->logger->pushHandler(new StreamHandler('php://stderr', Logger::ERROR));
+        $this->logger->error($message . "\n");
     }
     
     public static function warning($message) {
-        $this->logger->warning("Error: " . $message . "\n");
+        $this->logger = new Logger('activity_logger');
+        $this->logger->pushHandler(new StreamHandler('php://stderr', Logger::WARNING));
+        $this->logger->warning($message . "\n");
     }
 }
