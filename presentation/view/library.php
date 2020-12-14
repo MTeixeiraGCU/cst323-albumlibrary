@@ -9,7 +9,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/libraryHandler.
 
 <?php 
 if(is_null($albums)) {
-    echo "<h1>Your library is empty add a new album <a href='/presentation/views/createNewAlbum.php'>HERE</a>!</h1>";
+    echo "<h2>Your library is empty add a new album <a href='/presentation/view/createNewAlbum.php'>HERE</a>!</h2>";
 } else {
     foreach($albums as $album) {
 ?>

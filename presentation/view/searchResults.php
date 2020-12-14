@@ -10,7 +10,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/searchResultsHa
 <?php 
 
 if(is_null($albums)){
-    echo "<h1>No search results found for that token!</h1>";
+    echo "<h2>No search results found for that token!</h2>";
 } else {
     foreach($albums as $album) {
 ?>

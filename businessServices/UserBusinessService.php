@@ -46,8 +46,7 @@ class UserBusinessService {
    
         if($das->insertUser($email, $userName, $password, $dob, $role)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -67,8 +66,7 @@ class UserBusinessService {
         
         if($das->updateUser($email, $userName, $password, $dob, $role)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -84,8 +82,7 @@ class UserBusinessService {
         
         if($das->deleteUser($email)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

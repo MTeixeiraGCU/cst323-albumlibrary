@@ -29,4 +29,8 @@ class ActivityLogger extends AbstractActivityLogger {
     public static function error($message) {
         $this->logger->error("Error: " . $message . "\n");
     }
+    
+    public static function warning($message) {
+        $this->logger->warning("Error: " . $message . "\n");
+    }
 }
