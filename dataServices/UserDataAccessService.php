@@ -67,6 +67,7 @@ class UserDataAccessService
             return true;
         }
         else { //failed attempt to register.
+            ActivityLogger::warning("From UserDataAccessService::insertUser : no user was added to the database. affected_rows = " . $result . "!");
             $conn->close();
             return false;
         }

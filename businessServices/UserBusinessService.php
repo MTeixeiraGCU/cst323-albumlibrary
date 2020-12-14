@@ -43,6 +43,7 @@ class UserBusinessService {
     public function registerUser($email, $userName, $password, $dob, $role) {
         $das = new UserDataAccessService();
         $das = new ActivityLogger($das);
+        ActivityLogger::warning("registerUser method!");
    
         if($das->insertUser($email, $userName, $password, $dob, $role)) {
             return true;
