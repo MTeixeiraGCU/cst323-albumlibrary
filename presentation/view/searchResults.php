@@ -9,7 +9,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/searchResultsHa
 
 <?php 
 
-foreach($albums as $album) {
+if(is_null($albums)){
+    echo "<h1>No search results found for that token!</h1>";
+} else {
+    foreach($albums as $album) {
 ?>
 <div class="row" style="width: 100%; margin: auto;">
 
@@ -37,5 +40,6 @@ foreach($albums as $album) {
 </div>
 
 <?php 
+}
 }
 ?>

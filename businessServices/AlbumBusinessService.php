@@ -10,19 +10,28 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 
+/**
+ * This class handles business logic transactions between the user and the database for Albums
+ *
+ */
 class AlbumBusinessService {
     
+    /**
+     * This method returns the default list of albums from the database
+     * @param string $email
+     * @return array of albums
+     */
     public function getAlbums($email) {
-        $this->searchAlbums($email);
+        return $this->searchAlbums($email);
     }
     
     /**
      * This method searchs in the users albums for any of the matching tokens
      * @param string $email
-     * @param string $albumTitle
-     * @param string $postTime
-     * @param string $description
-     * @param string $artist
+     * @param string $albumTitle default to empty string
+     * @param string $description default to empty string
+     * @param string $artist defualt to empty string
+     * @return array of albums matching the search field
      */
     public function searchAlbums($email, $albumTitle = "", $description = "", $artist = "") {
         $das = new AlbumDataAccessService();
@@ -33,13 +42,13 @@ class AlbumBusinessService {
     
     /**
      * This method sends data to the database to create a new album
-     * @param unknown $email
-     * @param unknown $albumTitle
-     * @param unknown $postTime
-     * @param unknown $description
-     * @param unknown $rating
-     * @param unknown $artist
-     * @param unknown $imgLink
+     * @param string $email
+     * @param string $albumTitle
+     * @param string $postTime
+     * @param string $description
+     * @param integer $rating
+     * @param string $artist
+     * @param string $imgLink
      * @return boolean
      */
     public function createAlbum($email, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
@@ -56,14 +65,14 @@ class AlbumBusinessService {
     
     /**
      * This method updates an existing album with the provided data (REQUIRES ALBUM ID)
-     * @param unknown $email
-     * @param unknown $id
-     * @param unknown $albumTitle
-     * @param unknown $postTime
-     * @param unknown $description
-     * @param unknown $rating
-     * @param unknown $artist
-     * @param unknown $imgLink
+     * @param string $email
+     * @param integer $id
+     * @param string $albumTitle
+     * @param string $postTime
+     * @param string $description
+     * @param integer $rating
+     * @param string $artist
+     * @param string $imgLink
      * @return boolean
      */
     public function updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
@@ -80,14 +89,14 @@ class AlbumBusinessService {
     
     /**
      * This method deletes an album from the database with the given ID
-     * @param unknown $email
-     * @param unknown $id
-     * @param unknown $albumTitle
-     * @param unknown $postTime
-     * @param unknown $description
-     * @param unknown $rating
-     * @param unknown $artist
-     * @param unknown $imgLink
+     * @param string $email
+     * @param integer $id
+     * @param string $albumTitle
+     * @param string $postTime
+     * @param string $description
+     * @param integer $rating
+     * @param string $artist
+     * @param string $imgLink
      * @return boolean
      */
     public function deleteAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {

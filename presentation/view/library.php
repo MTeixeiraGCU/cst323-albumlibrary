@@ -8,8 +8,10 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/libraryHandler.
 <!-- This section is going to need a handler that will return all database entries for albums and fill a card out for each.  -->
 
 <?php 
-
-foreach($albums as $album) {
+if(is_null($albums)) {
+    echo "<h1>Your library is empty add a new album <a href='/presentation/views/createNewAlbum.php'>HERE</a>!</h1>";
+} else {
+    foreach($albums as $album) {
 ?>
 <div class="row" style="width: 100%; margin: auto;">
 
@@ -37,5 +39,6 @@ foreach($albums as $album) {
 </div>
 
 <?php 
+    }
 }
 ?>
