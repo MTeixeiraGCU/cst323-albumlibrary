@@ -7,7 +7,7 @@
  * Nov 27, 2020
  */
 
-require_once $_SERVER['DOCUMENT_ROOT'] . 'autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 
 class AlbumDataAccessService {
     
