@@ -47,7 +47,7 @@ class UserBusinessService {
    
         $results = $das->insertUser($email, $userName, $password, $dob, $role);
         
-        ActivityLogger::warning("registerUser method post-insert : results : " . $results . !");
+        ActivityLogger::warning("registerUser method post-insert : results : " . $results . "!");
         
         return $results;
     }
