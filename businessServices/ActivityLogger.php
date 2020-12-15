@@ -26,6 +26,12 @@ class ActivityLogger extends AbstractActivityLogger {
         return $value;
     }
     
+    public static function info($message) {
+        $logger = new Logger('activity_logger');
+        $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
+        $logger->info($message . "\n");
+    }
+    
     public static function error($message) {
         $logger = new Logger('activity_logger');
         $logger->pushHandler(new StreamHandler('php://stderr', Logger::ERROR));

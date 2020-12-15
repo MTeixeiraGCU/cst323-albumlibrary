@@ -52,7 +52,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         //check for a duplicate user
         
-        if($bs->registerUser($user->getEmail(), $user->getUserName(), $user->getPassword(), $user->getDob(), $user->getRole())) { //successful check of registration
+        ActivityLogger::warning("registration handler pre-register!");
+        
+        $results = $bs->registerUser($user->getEmail(), $user->getUserName(), $user->getPassword(), $user->getDob(), $user->getRole());
+        
+        ActivityLogger::warning("registration handler post-register : results : " . $result . "!");
+        
+        if($results) { //successful check of registration
+            ActivityLogger::info("User was added to the database: Email: " . $user->getEmail());
             header('Location: /presentation/view/registrationComplete.php');
         }
         else {  //user already exists
