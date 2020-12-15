@@ -43,11 +43,8 @@ class UserBusinessService {
     public function registerUser($email, $userName, $password, $dob, $role) {
         $das = new UserDataAccessService();
         $das = new ActivityLogger($das);
-        ActivityLogger::warning("registerUser method pre-insert!");
    
         $results = $das->insertUser($email, $userName, $password, $dob, $role);
-        
-        ActivityLogger::warning("registerUser method post-insert : results : " . $results . "!");
         
         return $results;
     }

@@ -51,12 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $bs = new ActivityLogger($bs);
         
         //check for a duplicate user
-        
-        ActivityLogger::warning("registration handler pre-register!");
-        
         $results = $bs->registerUser($user->getEmail(), $user->getUserName(), $user->getPassword(), $user->getDob(), $user->getRole());
-        
-        ActivityLogger::warning("registration handler post-register : results : " . $result . "!");
         
         if($results) { //successful check of registration
             ActivityLogger::info("User was added to the database: Email: " . $user->getEmail());
