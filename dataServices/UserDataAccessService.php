@@ -50,6 +50,7 @@ class UserDataAccessService
     
     public function insertUser($email, $userName, $password, $dob, $role) {
         $das = new DataAccessService();
+        $das = new ActivityLogger($das);
         
         $conn = $das->getConnection();
         

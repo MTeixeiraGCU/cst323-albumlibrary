@@ -11,6 +11,7 @@ $regMessageErr = "* required fields";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $user = new User($_POST["userName"], $_POST["password1"], $_POST["email"], "", "");
+    $user = new ActivityLogger($user);
     
     $password2 = $_POST["password2"];
     
