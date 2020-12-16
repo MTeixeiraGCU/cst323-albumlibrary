@@ -26,20 +26,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
   <div class="form-group">
     <label for="albumArt">Album Art</label>
-    <input type="file" class="form-control-file" id="albumArt" enctype="multipart/form-data" accept="image/*uiu " name="img_file">
+    <input type="file" class="form-control-file" id="albumArt" enctype="multipart/form-data" accept="image/*" name="img_file">
   </div>
 
   <div class="form-group">
     <label for="album">Album</label>
-    <input type="email" class="form-control" id="album" placeholder="Album" name="albumName">
+    <input type="text" class="form-control" id="album" placeholder="Album" name="albumName">
   </div>
   <div class="form-group">
     <label for="artist">Artist </label>
-    <input type="email" class="form-control" id="artist" placeholder="Artist" name="artist">
+    <input type="text" class="form-control" id="artist" placeholder="Artist" name="artist">
   </div>
   <div class="form-group">
     <label for="releaseDate">Release Date</label>
-    <input type="email" class="form-control" id="releaseDate" placeholder="Release Date" name="postDate">
+    <input type="text" class="form-control" id="releaseDate" placeholder="Release Date" name="postDate">
   </div>
 
   <div class="form-group">
