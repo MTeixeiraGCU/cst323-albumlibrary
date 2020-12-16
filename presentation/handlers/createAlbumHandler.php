@@ -37,9 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
     //check for image properties
     if(isset($_FILES['img_file'])) {
     
-        $target_dir = "/presentation/media/";
+        ActivityLogger::info("Setting up image upload!");
+        
+        $dir = $_SERVER['DOCUMENT_ROOT'] . "/presentation/media/";
         $img_name = $_FILES["img_file"]["name"];
-        $target_file = $target_dir . basename($img_name);
+        $target_file = $dir . basename($img_name);
         $ready = true;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         
@@ -73,10 +75,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
             
         // Check if we are ready to upload the file
         if ($ready) {
+            ActivityLogger::info("Attempting to add image to server!");
             if (move_uploaded_file($_FILES["img_file"]["tmp_name"], $target_file)) {
                 ActivityLogger::info("Image file has been uploaded! File: " . $img_name);
             } else {
-                ActivityLogger::error("Image file could not be uploaded! File: " . img_name);
+                ActivityLogger::error("Image file could not be uploaded! File: " . $img_name);
                 $img_name = "noimage.png";
             }
         }
