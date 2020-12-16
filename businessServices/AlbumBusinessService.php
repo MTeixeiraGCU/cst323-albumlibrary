@@ -55,7 +55,7 @@ class AlbumBusinessService {
         $das = new AlbumDataAccessService();
         $das = new ActivityLogger($das);
         
-        if($das->insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink)){
+        if($das->insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artist, $imgLink)){
             return true;
         }
         else {

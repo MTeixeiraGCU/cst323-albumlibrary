@@ -3,7 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 
 //check each of the required fields and populate thier error message as necessary.
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
     
     $albumName = "";
     $artist = "";
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     //check for image properties
-    if(isset($_POST['img_file'])) {
+    if(isset($_FILES['img_file'])) {
     
         $target_dir = "/presentation/media/";
         $img_name = $_FILES["img_file"]["name"];
@@ -80,6 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
  
+    } else {
+        ActivityLogger::warning("Could not upload image!");
     }
     
     $album = new Album($albumName, $postDate, $description, $rating, $artist, $img_name);
