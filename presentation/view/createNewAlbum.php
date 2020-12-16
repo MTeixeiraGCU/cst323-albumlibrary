@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 <!-- </head> --> 
 <body>
 
-<form action="/presentation/handlers/createAlbumHandler.php" method="post">
+<form action="/presentation/handlers/createAlbumHandler.php" enctype="multipart/form-data" method="post">
 
   <div class="card" style="width: 18rem;">
     <img src="/presentation/media/noimage.png" class="card-img-top" alt="...">
@@ -26,7 +26,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
   <div class="form-group">
     <label for="albumArt">Album Art</label>
-    <input type="file" class="form-control-file" id="albumArt" enctype="multipart/form-data" accept="image/*" name="img_file">
+    <input type="file" class="form-control-file" id="albumArt" accept="image/*" name="img_file">
   </div>
 
   <div class="form-group">

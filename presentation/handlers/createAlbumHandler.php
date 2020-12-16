@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //check for image properties
     if(isset($_POST['img_file'])) {
     
-        $dir = "/presentation/media/";
+        $target_dir = "/presentation/media/";
         $img_name = $_FILES["img_file"]["name"];
         $target_file = $target_dir . basename($img_name);
         $ready = true;
