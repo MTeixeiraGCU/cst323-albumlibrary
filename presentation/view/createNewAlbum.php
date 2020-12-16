@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 <!-- </head> --> 
 <body>
 
-<form action="/presentation/view/createAlbumHandler.php" method="post">
+<form action="/presentation/handlers/createAlbumHandler.php" method="post">
 
   <div class="card" style="width: 18rem;">
     <img src="/presentation/media/noimage.png" class="card-img-top" alt="...">
