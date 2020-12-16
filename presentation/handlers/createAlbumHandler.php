@@ -1,6 +1,7 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
 //check each of the required fields and populate thier error message as necessary.
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
@@ -93,8 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
     
     $bs->createAlbum($_SESSION['UserEmail'], $album->getAlbumTitle(), $album->getPostTime(), $album->getDescription(), $album->getRating(), $album->getartist(), $album->getImgLink());
     
-    header("Location: /presentation/view/albumAdded.php");
+} 
     
-}
+header("Location: /presentation/view/albumAdded.php?AlbumName=" . $album->getAlbumTitle());
 
 ?>
