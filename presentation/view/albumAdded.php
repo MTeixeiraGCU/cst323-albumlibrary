@@ -13,8 +13,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 	
 	<body>
 		<div class="page-heading">
-			<h1>The album has been added to your library!</h1>
-			<a href="/presentation/view/library.php">Go to Library</a>
+			<?php 
+			if(isset($_GET['AlbumName'])) {
+			    echo "<h2>" . $_GET['AlbumName'] .  " has been added to your library!</h2>";
+			} else {
+			    echo "<h2>Could not add album to your library!</h2>";
+			}
+			?>
+			<a href="/presentation/view/library.php">Return to Library</a>
 		</div>
 		
 	</body>

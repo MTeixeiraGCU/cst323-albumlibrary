@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 	
 	<body>
 		<div class="page-heading">
-			<h1>Registration Successful, Proceed to Login!</h1>
+			<h2>Registration Successful, Proceed to Login!</h2>
 			<a href="/index.php">Go to Login</a>
 		</div>
 		
