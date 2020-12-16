@@ -58,6 +58,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
       <textarea class="form-control" id="albumNotes" name="albumNotes" rows="4" cols="50" name="description">album ipsum album ipsum album ipsum album ipsum album ipsum 
     </textarea>
   </div>
+  
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Add</button>
+  </div>
 
   <!-- <div class="form-group">
     <label for="exampleFormControlSelect2">Example multiple select</label>
@@ -69,4 +73,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
       <option>5</option>
     </select> -->
   <!-- </div> -->  
+  
+  
 </form>
