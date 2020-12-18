@@ -4,8 +4,6 @@
  * UserDataAccessService.php
  * Description: handles all the data information for users
  *
- * @author Marc Teixeira
- * Nov 24, 2020
  */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
@@ -13,6 +11,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 class UserDataAccessService
 {
     //CRUD methods
+    
+    //Retrieve
+    /**
+     * This method grabs a single user for the database with the matching credientials
+     * @param String $email
+     * @param String $password
+     * @return NULL|unknown
+     */
     public function getUser($email, $password) {
         
         $das = new DataAccessService();
@@ -48,6 +54,16 @@ class UserDataAccessService
         }
     }
     
+    //Create
+    /**
+     * This method adds a single user to the database
+     * @param String $email
+     * @param String $userName
+     * @param String $password
+     * @param String $dob
+     * @param String $role
+     * @return boolean
+     */
     public function insertUser($email, $userName, $password, $dob, $role) {
         $das = new DataAccessService();
         $das = new ActivityLogger($das);
@@ -73,6 +89,16 @@ class UserDataAccessService
         }
     }
     
+    //Update
+    /**
+     * This method updates a users information on the database
+     * @param String $email
+     * @param String $userName
+     * @param String $password
+     * @param String $dob
+     * @param String $role
+     * @return boolean
+     */
     public function updateUser($email, $userName, $password, $dob, $role) {
         $das = new DataAccessService();
         $das = new ActivityLogger($das);
@@ -97,6 +123,12 @@ class UserDataAccessService
         }
     }
     
+    //Delete
+    /**
+     * This method removes a single userr and thier albums form the database
+     * @param String $email
+     * @return boolean
+     */
     public function deleteUser($email) {
         $das = new DataAccessService();
         $das = new ActivityLogger($das);

@@ -1,8 +1,9 @@
-<!--
-
--->
-
 <?php
+
+/**
+ * loginHandler.php
+ * This file is called by the login page after the users attempts to login. It checks their credientials and populates any error fields based on what the user entered.
+ */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
     

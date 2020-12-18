@@ -1,6 +1,11 @@
+<!-- 
+    registrationComplete.php
+    This is an HTML page that notifies the user that they have successfully registered to the site.
+ -->
+
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
 
 <!DOCTYPE html>

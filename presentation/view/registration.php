@@ -1,6 +1,11 @@
+<!-- 
+    registration.php
+    This is an HTML page displaying a form for the user to enter thier information in an register to the site.
+ -->
+
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
 
 <!DOCTYPE html>

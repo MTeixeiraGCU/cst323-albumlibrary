@@ -1,7 +1,13 @@
+<!-- 
+    creatNewAlbum.php
+    This file is an HTML page displaying a form for the user to input information and create a new album for thier library.
+ -->
+
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
+
 <!-- <head> -->
     <!-- Required meta tags -->
     <!-- <meta charset="utf-8"> -->
@@ -11,6 +17,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" -->
         <!-- integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
 <!-- </head> --> 
+
 <body>
 
 <form action="/presentation/handlers/createAlbumHandler.php" enctype="multipart/form-data" method="post">

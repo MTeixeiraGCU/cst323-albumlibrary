@@ -4,8 +4,6 @@
  * UserBusinessService.php
  * Description: This class is designed to handle business logic for users and user logins
  * 
- * @author Marc Teixeira
- * Nov 24, 2020
  */
 
 

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * autoloader.php
+ * This file adds all of the required class dependencies when set as required.
+ */
+
 spl_autoload_register(function($class){
 
     // get the difference in folders between location of autoloader and the file that callled it

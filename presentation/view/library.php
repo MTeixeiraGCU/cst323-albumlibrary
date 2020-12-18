@@ -1,7 +1,13 @@
+<!-- 
+    library.php
+    This file is an HTML page that acts as a users home page displaying all of thier albums. 
+    libraryHandler.php must be called first in order to populate an array of albums for the page to be displayed.
+ -->
+
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/libraryHandler.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/libraryHandler.php';
 ?>
 
 <h1>Your Library</h1>

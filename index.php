@@ -1,6 +1,11 @@
+<!-- 
+    index.php
+    This is an HTML page that acts as the entry point for the application and login page to get the user started. 
+ -->
+
 <?php 
-require_once 'header.php';
-require_once 'autoloader.php';
+    require_once 'header.php';
+    require_once 'autoloader.php';
 ?>
 
 <!DOCTYPE html>

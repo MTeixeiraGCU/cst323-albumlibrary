@@ -1,6 +1,11 @@
+<!-- 
+    logout.php
+    This file is an HTML page notifying the user that they have logged out and linking them back to the initial login page.
+ -->
+
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
     
     if(isset($_SESSION['UserEmail'])) {
         session_destroy();

@@ -7,6 +7,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+/**
+ * AbstractActivityLogger.php
+ * This class is abstract. It is designed to use a logger API to create log entries for all of the classes and methods in a project
+ *
+ */
 class AbstractActivityLogger {
     
     public $_object;
@@ -29,6 +34,7 @@ class AbstractActivityLogger {
         $this->logger->info("created intercepter for " . get_class($object) . "\n");
     }
     
+    //interceptor methods
     public function callMethod($method, $args){
         return call_user_func_array(array($this->_object, $method), $args);
     }

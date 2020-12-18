@@ -1,4 +1,9 @@
 <?php
+/**
+ * createAlbumHandler.php
+ * This file is called by the create an album form to process and add the new album into the users library.
+ */
+
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';

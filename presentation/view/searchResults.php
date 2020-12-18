@@ -1,7 +1,13 @@
+<!-- 
+    searchResults.php
+    This is an HTML page that displays a list of found albums from the users library that match the entered token.
+    searchResultsHandler.php must be called first in order to populate the array with albums.
+ -->
+
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/searchResultsHandler.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/presentation/handlers/searchResultsHandler.php';
 ?>
 
 <h1>Your Search Results</h1>

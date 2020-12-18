@@ -3,8 +3,6 @@
  * AlbumDataAccessService.php
  * Description: handles all the data information for albums
  *
- * @author Marc Teixeira
- * Nov 27, 2020
  */
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
@@ -12,6 +10,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 class AlbumDataAccessService {
     
     //CRUD methods
+    
+    //Retrieve
+    /**
+     * This method gets an array of all possible matching albums
+     * @param unknown $email user email connected to this album
+     * @param unknown $albumTitle token for album title search
+     * @param unknown $description token for album description search
+     * @param unknown $artist token for album artist name search
+     * @return NULL|array
+     */
     public function getAlbums($email, $albumTitle, $description, $artist) {
         
         $das = new DataAccessService();
@@ -53,6 +61,18 @@ class AlbumDataAccessService {
         }
     }
     
+    //Create
+    /**
+     * This method adds a single album to the database.
+     * @param unknown $email
+     * @param unknown $albumTitle
+     * @param unknown $postTime
+     * @param unknown $description
+     * @param unknown $rating
+     * @param unknown $artisit
+     * @param unknown $imgLink
+     * @return boolean
+     */
     public function insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink) {
         $das = new DataAccessService();
         $das = new ActivityLogger($das);
@@ -77,6 +97,19 @@ class AlbumDataAccessService {
         }
     }
     
+    //Update
+    /**
+     * This method updates an album with new information. An album ID is required for this operation
+     * @param unknown $email
+     * @param unknown $id
+     * @param unknown $albumTitle
+     * @param unknown $postTime
+     * @param unknown $description
+     * @param unknown $rating
+     * @param unknown $artist
+     * @param unknown $imgLink
+     * @return boolean
+     */
     public function updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new DataAccessService();
         $das = new ActivityLogger($das);
@@ -101,6 +134,13 @@ class AlbumDataAccessService {
         }
     }
     
+    //Delete
+    /**
+     * This mehtod deletes an album form the database. An album ID is required.
+     * @param unknown $email
+     * @param unknown $id
+     * @return boolean
+     */
     public function deleteUser($email, $id) {
         $das = new DataAccessService();
         $das = new ActivityLogger($das);

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * registrationHandler.php
+ * This file is called by the register user form. It attempts to add the a new user to the application with the entered information. It will populate error messages based on user incorrect input.
+ */
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
 
 // define error message variables and set to empty values

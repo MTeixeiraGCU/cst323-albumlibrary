@@ -1,6 +1,11 @@
+<!-- 
+    albumAdded.php
+    This file is an HTML page notifying the user that they have added a new album to thier library.
+ -->
+
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 ?>
 
 <!DOCTYPE html>

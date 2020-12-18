@@ -3,8 +3,6 @@
  * AlbumBusinessService.php
  * Description: This class is designed to handle business logic for album manipulation
  *
- * @author Marc Teixeira
- * Nov 27, 2020
  */
 
 

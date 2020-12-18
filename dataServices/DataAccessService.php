@@ -4,8 +4,6 @@
 * DataAccessService.php
 * Description: This class connects and gives access to a database
 *
-* @author Marc Teixeira
-* Nov 24, 2020
 */
 
 class DataAccessService
@@ -17,6 +15,10 @@ class DataAccessService
     private $dbName = "lxnp1v0ujxnefmlg";
     
     //methods
+    /**
+     * This method grabs a connection to the database and returns it. Connection must be closed externally.
+     * @return mysqli
+     */
     public function getConnection() {
         
         $conn = new mysqli($this->dbServerName, $this->dbUsername, $this->dbPassword, $this->dbName);
