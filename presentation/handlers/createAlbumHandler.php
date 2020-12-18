@@ -100,7 +100,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
     $bs = new AlbumBusinessService();
     $bs = new ActivityLogger($bs);
     
-    $bs->createAlbum($_SESSION['UserEmail'], $album->getAlbumTitle(), $album->getPostTime(), $album->getDescription(), $album->getRating(), $album->getartist(), $album->getImgLink());
+    if($bs->createAlbum($_SESSION['UserEmail'], $album->getAlbumTitle(), $album->getPostTime(), $album->getDescription(), $album->getRating(), $album->getartist(), $album->getImgLink())) {
+        ActivityLogger::info("Added album to database!");
+    } else {
+        
+        //reset title
+        $album->setAlbumTitle("");
+        
+        ActivityLogger::warning("Album was not added!");
+    }
     
 } 
     

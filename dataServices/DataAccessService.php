@@ -24,9 +24,11 @@ class DataAccessService
         $conn = new mysqli($this->dbServerName, $this->dbUsername, $this->dbPassword, $this->dbName);
         
         if($conn->connect_error) {
+            ActivityLogger::error("Could not create connection to the database! Check the given connection strings!");
             die("Connection failed! " . $conn->connect_error . "<br>");
         }
         else {
+            ActivityLogger::info("Connection to database was created!");
             return $conn;
         }
     }

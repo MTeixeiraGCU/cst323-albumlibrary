@@ -14,10 +14,10 @@ class AlbumDataAccessService {
     //Retrieve
     /**
      * This method gets an array of all possible matching albums
-     * @param unknown $email user email connected to this album
-     * @param unknown $albumTitle token for album title search
-     * @param unknown $description token for album description search
-     * @param unknown $artist token for album artist name search
+     * @param string $email user email connected to this album
+     * @param string $albumTitle token for album title search
+     * @param string $description token for album description search
+     * @param string $artist token for album artist name search
      * @return NULL|array
      */
     public function getAlbums($email, $albumTitle, $description, $artist) {
@@ -41,12 +41,13 @@ class AlbumDataAccessService {
             
         } else {
             
-            echo "SQL error during query set up for getUser.";
+            ActivityLogger::error("SQL error during query set up for getAlbums.");
             $conn->close();
             exit();
         }
         
         if(!$result) { //failed to find any albums
+            ActivityLogger::warning("No albums were found that match those tokens!");
             $conn->close();
             return null;
         }
@@ -56,6 +57,7 @@ class AlbumDataAccessService {
             while($album = $result->fetch_assoc()) {
                 array_push($albums, $album);
             }
+            
             $conn->close();
             return $albums;
         }
@@ -64,13 +66,13 @@ class AlbumDataAccessService {
     //Create
     /**
      * This method adds a single album to the database.
-     * @param unknown $email
-     * @param unknown $albumTitle
-     * @param unknown $postTime
-     * @param unknown $description
-     * @param unknown $rating
-     * @param unknown $artisit
-     * @param unknown $imgLink
+     * @param string $email
+     * @param string $albumTitle
+     * @param string $postTime
+     * @param string $description
+     * @param integer $rating
+     * @param string $artisit
+     * @param string $imgLink
      * @return boolean
      */
     public function insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink) {
@@ -86,12 +88,18 @@ class AlbumDataAccessService {
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
+        } else {           
+            ActivityLogger::error("SQL error during query set up for insertAlbum.");
+            $conn->close();
+            exit();
         }
+        
         if ($result > 0) { //successful entry
             $conn->close();
             return true;
         }
-        else { //failed attempt to register.
+        else { //failed attempt to add album.
+            ActivityLogger::warning("Could not insert new album!");
             $conn->close();
             return false;
         }
@@ -100,14 +108,14 @@ class AlbumDataAccessService {
     //Update
     /**
      * This method updates an album with new information. An album ID is required for this operation
-     * @param unknown $email
-     * @param unknown $id
-     * @param unknown $albumTitle
-     * @param unknown $postTime
-     * @param unknown $description
-     * @param unknown $rating
-     * @param unknown $artist
-     * @param unknown $imgLink
+     * @param string $email
+     * @param integer $id
+     * @param string $albumTitle
+     * @param string $postTime
+     * @param string $description
+     * @param integer $rating
+     * @param string $artist
+     * @param string $imgLink
      * @return boolean
      */
     public function updateAlbum($email, $id, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
@@ -123,12 +131,18 @@ class AlbumDataAccessService {
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
+        } else {            
+            ActivityLogger::error("SQL error during query set up for updateAlbum.");
+            $conn->close();
+            exit();
         }
+        
         if ($result > 0) { //successful entry
             $conn->close();
             return true;
         }
-        else { //failed attempt to register.
+        else { //failed attempt to update album.
+            ActivityLogger::warning("Could not update album in database!");
             $conn->close();
             return false;
         }
@@ -137,8 +151,8 @@ class AlbumDataAccessService {
     //Delete
     /**
      * This mehtod deletes an album form the database. An album ID is required.
-     * @param unknown $email
-     * @param unknown $id
+     * @param string $email
+     * @param integer $id
      * @return boolean
      */
     public function deleteUser($email, $id) {
@@ -154,12 +168,19 @@ class AlbumDataAccessService {
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
+        } else {
+            ActivityLogger::error("SQL error during query set up for deleteAlbum.");
+            $conn->close();
+            exit();
         }
-        if ($result > 0) { //successful entry
+        
+        
+        if ($result > 0) { //successful deletion
             $conn->close();
             return true;
         }
-        else { //failed attempt to register.
+        else { //failed attempt to delete album.
+            ActivityLogger::warning("Could not delete album from database!");
             $conn->close();
             return false;
         }

@@ -41,10 +41,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
             if(!is_null($loggedUser)) {  //successful login
                 $_SESSION['UserEmail'] = $user->getEmail();
                 $_SESSION['LoggedIn'] = true;
+                
+                ActivityLogger::info("Successful login for : " . $_SESSION['UserEmail']);
+                
                 header("Location: /presentation/view/library.php");
             } 
             else {          //failed login
                 $loginMessageErr = "The email or password is incorrect. Please try again.";
+                
+                ActivityLogger::warning("Could not authenticate user!");
+                
                 include $_SERVER['DOCUMENT_ROOT'] . '/index.php';
                 exit();
             }
@@ -52,6 +58,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/autoloader.php';
         }  
         else { //not ready
             $loginMessageErr = "";
+            
+            ActivityLogger::warning("Invalid stat was entered in the login fields!");
+            
             include $_SERVER['DOCUMENT_ROOT'] . '/index.php';
         }
     }

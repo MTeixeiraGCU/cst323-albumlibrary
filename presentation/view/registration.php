@@ -16,7 +16,7 @@
 		<title>Registration</title>
 	</head>
 	<body id="form-style">
-		<span class="form-signin">
+		<div class="form-signin">
             <form action="/presentation/handlers/registrationHandler.php" method="POST">
             	<h2>Register New Account</h2>
 
@@ -45,7 +45,7 @@
               </div>
               
             </form>
-        </span>
+        </div>
     </body>
     
 </html>

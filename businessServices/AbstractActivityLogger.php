@@ -19,6 +19,10 @@ class AbstractActivityLogger {
     
     public $logger;
     
+    /**
+     * constructor method for creating the intercepting logger. 
+     * @param unknown $object
+     */
     public function __construct($object) {
         $this->_object = $object;
         
@@ -29,6 +33,7 @@ class AbstractActivityLogger {
         }
         $object->intercepted = $this;
         
+        //add in MonoLog support
         $this->logger = new Logger('activity_logger');
         $this->logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
         $this->logger->info("created intercepter for " . get_class($object) . "\n");
@@ -55,18 +60,27 @@ class AbstractActivityLogger {
         return $this->_rootObject->$name;
     }
     
+    /**
+     * This method will call all the necessary logging methods through a single method call process
+     * @param unknown $method
+     * @param unknown $args
+     * @return unknown
+     */
     public function __call($method, $args) {
         if ($method[0] == "_") {
             $method = substr($method, 1);
         }
+        //call any before methods that exist
         if (method_exists($this, "before")){
             $this->before($this->_rootObject, $method, $args);
         }
+        //call any around methods that exist
         if (method_exists($this, "around")) {
             $value = $this->around($this->_rootObject, $method, $args);
         } else {
             $value = $this->callMethod($method, $args);
         }
+        //call any after methods that exist
         if (method_exists($this, "after")) {
             $this->after($this->_rootObject, $method, $args);
         }

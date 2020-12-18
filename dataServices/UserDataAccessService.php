@@ -26,21 +26,19 @@ class UserDataAccessService
         
         $conn = $das->getConnection();
         
-        if($stmt = $conn->prepare("SELECT * FROM `users` WHERE EMAIL LIKE ? AND PASSWORD LIKE BINARY ?")) {
-            
+        if($stmt = $conn->prepare("SELECT * FROM `users` WHERE EMAIL LIKE ? AND PASSWORD LIKE BINARY ?")) {            
             $stmt->bind_param("ss", $email, $password);
             $stmt->execute();
             $result = $stmt->get_result();
-            $stmt->close();
-            
-        } else {
-            
-            echo "SQL error during query set up for getUser.";
+            $stmt->close();            
+        } else {            
+            ActivityLogger::error("SQL error during query set up for getUser.");
             $conn->close();
             exit();
         }
         
-        if(!$result) {
+        if(!$result) { // failed retrieveing user
+            ActivityLogger::error("Could not add new user to database!");
             $conn->close();
             return null;
         }
@@ -49,6 +47,7 @@ class UserDataAccessService
             return $result->fetch_assoc();
         }
         else {
+            ActivityLogger::warning("Mulitple entires found in database occured!");
             $conn->close();
             return null;
         }
@@ -77,7 +76,12 @@ class UserDataAccessService
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
+        } else {
+            ActivityLogger::error("SQL error during query set up for insertUser.");
+            $conn->close();
+            exit();
         }
+        
         if ($result > 0) { //successful entry
             $conn->close();
             return true;
@@ -112,12 +116,18 @@ class UserDataAccessService
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
+        } else {
+            ActivityLogger::error("SQL error during query set up for updateUser.");
+            $conn->close();
+            exit();
         }
+        
         if ($result > 0) { //successful entry
             $conn->close();
             return true;
         }
-        else { //failed attempt to register.
+        else { //failed attempt to update user.
+            ActivityLogger::warning("Could not update user information into database!");
             $conn->close();
             return false;
         }
@@ -125,7 +135,7 @@ class UserDataAccessService
     
     //Delete
     /**
-     * This method removes a single userr and thier albums form the database
+     * This method removes a single user and thier albums form the database
      * @param String $email
      * @return boolean
      */
@@ -142,12 +152,18 @@ class UserDataAccessService
             $stmt->execute();
             $result = $stmt->affected_rows;
             $stmt->close();
+        } else {
+            ActivityLogger::error("SQL error during query set up for deleteUser.");
+            $conn->close();
+            exit();
         }
-        if ($result > 0) { //successful entry
+        
+        if ($result > 0) { //successful deletion
             $conn->close();
             return true;
         }
-        else { //failed attempt to register.
+        else { //failed attempt to delete user.
+            ActivityLogger::warning("Could not delete user from database!");
             $conn->close();
             return false;
         }

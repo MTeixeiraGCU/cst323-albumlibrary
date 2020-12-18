@@ -64,13 +64,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         else {  //user already exists
             $regMessageErr = "There was a problem during registration.";
-            ActivityLogger::warning("There was a problem during registration for user insertion.");
+            ActivityLogger::warning("There was a problem during registration for user.");
             include $_SERVER['DOCUMENT_ROOT'] . '/presentation/view/registration.php';
             exit();
         }
     }
     else { //not ready to move to next form
-        ActivityLogger::warning("There was a problem during registration user information incorrect format.");
+        ActivityLogger::warning("There was a problem during registration user information in an incorrect format.");
         include $_SERVER['DOCUMENT_ROOT'] . '/presentation/view/registration.php';
     }
 }
