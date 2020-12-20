@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
             
         // Check if file already exists
         if (file_exists($target_file) && $ready) {
-            ActivtyLogger::warning("File already exists! File: " . $img_name);
+            ActivityLogger::warning("File already exists! File: " . $img_name);
             $ready = false;
         }
         
