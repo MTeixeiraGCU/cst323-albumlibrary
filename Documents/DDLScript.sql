@@ -5,8 +5,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema cst323_clcproject
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `cst323_clcproject` DEFAULT CHARACTER SET utf8 ;
-USE `cst323_clcproject` ;
+CREATE SCHEMA IF NOT EXISTS `fa8bcve3hdjavv78` DEFAULT CHARACTER SET utf8 ;
+USE `fa8bcve3hdjavv78` ;
 
 -- -----------------------------------------------------
 -- Table `users`
@@ -29,7 +29,7 @@ DEFAULT CHARACTER SET = utf8;
 DROP TABLE IF EXISTS `albums` ;
 
 CREATE TABLE IF NOT EXISTS `albums` (
-  `ID` INT(11) NOT NULL,
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
   `ALBUM_TITLE` VARCHAR(45) NULL DEFAULT NULL,
   `POST_TIME` VARCHAR(45) NULL DEFAULT NULL,
   `DESCRIPTION` TEXT NULL DEFAULT NULL,
@@ -51,5 +51,3 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 INSERT INTO `users` (`EMAIL`, `USERNAME`, `PASSWORD`, `DOB`, `ROLE`) VALUES ("marc@gcu.edu", "marc", 1234, "", "Admin");
-INSERT INTO `users` (`EMAIL`, `USERNAME`, `PASSWORD`, `DOB`, `ROLE`) VALUES ("katon@gcu.edu", "katon", 1234, "", "Admin");
-INSERT INTO `users` (`EMAIL`, `USERNAME`, `PASSWORD`, `DOB`, `ROLE`) VALUES ("will@gcu.edu", "will", 1234, "", "Admin");

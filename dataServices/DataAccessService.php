@@ -9,10 +9,10 @@
 class DataAccessService
 {
     //properties
-    private $dbServerName = "dno6xji1n8fm828n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    private $dbUsername = "jbckpw5uh2ugr3bz";
-    private $dbPassword = "i72m1gq2g5s60at1";
-    private $dbName = "lxnp1v0ujxnefmlg";
+    private $dbServerName = "l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    private $dbUsername = "czhtc2g92jdj2co4";
+    private $dbPassword = "jxwne81lfyvrma4t";
+    private $dbName = "fa8bcve3hdjavv78";
     
     //methods
     /**
