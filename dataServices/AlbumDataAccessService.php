@@ -75,7 +75,7 @@ class AlbumDataAccessService {
      * @param string $imgLink
      * @return boolean
      */
-    public function insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artisit, $imgLink) {
+    public function insertAlbum($email, $albumTitle, $postTime, $description, $rating, $artist, $imgLink) {
         $das = new DataAccessService();
         $das = new ActivityLogger($das);
         
