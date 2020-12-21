@@ -109,9 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['UserEmail'])) {
         
         ActivityLogger::warning("Album was not added!");
     }
-    
-} 
-    
-header("Location: /presentation/view/albumAdded.php?AlbumName=" . $album->getAlbumTitle());
+    header("Location: /presentation/view/albumAdded.php?AlbumName=" . $album->getAlbumTitle());
+} else {
+    header("Location: /presentation/view/albumAdded.php");
+}
 
 ?>
