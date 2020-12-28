@@ -37,7 +37,9 @@ if(is_null($albums)) {
             echo "  </div>";
             echo "</div>";
             
-            if($album = next($albums)){
+            if(next($albums)){
+                $album = current($albums);
+            } else {
                 break;
             }
         }
