@@ -9,10 +9,18 @@
 class DataAccessService
 {
     //properties
-    private $dbServerName = "l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    private $dbUsername = "czhtc2g92jdj2co4";
-    private $dbPassword = "jxwne81lfyvrma4t";
-    private $dbName = "fa8bcve3hdjavv78";
+    private $dbServerName;
+    private $dbUsername;
+    private $dbPassword;
+    private $dbName;
+    
+    //constructor
+    public function __construct(){
+        $this->dbServerName = getenv('DB_SERVER');
+        $this->dbUsername = getenv('DB_USER_NAME');
+        $this->dbPassword = getenv('DB_PASSWORD');
+        $this->dbName = getenv('DB_NAME');
+    }
     
     //methods
     /**
