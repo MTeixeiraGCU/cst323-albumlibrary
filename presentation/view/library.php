@@ -17,30 +17,34 @@
 if(is_null($albums)) {
     echo "<h2>Your library is empty add a new album <a href='/presentation/view/createNewAlbum.php'>HERE</a>!</h2>";
 } else {
-    foreach($albums as $album) {
+    $album = next($albums);
+    while(!is_null($album)) {
 ?>
 <div class="row" style="width: 100%; margin: auto;">
 
 <?php 
-    for($i = 0; $i < 1; $i++) {
-
-        echo "<div class='card' style='width: 18rem; margin: auto;'>";
-        echo "  <img src='/presentation/media/" . $album['IMG_LINK'] . "' class='card-img-top' alt='...'>";
-        echo "  <div class='card-body'>";
-        echo "      <h5 class='card-title'>" . $album['ALBUM_TITLE'] . "</h5>";
-        echo "      <p class='card-text'>Release Date: " . $album['POST_TIME'] . "</p>";
-        echo "      <p class='card-text'>Artist: " . $album['ARTIST'] . "</p>";
-        echo "      <p class='card-text'>Rating: " . $album['RATING'] . "/5</p>";
-        echo "      <p class='card-text'>Description: " . $album['DESCRIPTION'] . "</p>";
-        echo "      <!-- <a href='#' class='btn btn-primary'>Go somewhere</a> -->";
-        echo "  </div>";
-        echo "</div>";
-        
-        $album = next($albums);
-        if(is_null($album)){
-            break;
+        for($i = 0; $i < 3; $i++) {
+    
+            echo "<div class='card' style='width: 18rem; margin: auto;'>";
+            echo "  <img src='/presentation/media/" . $album['IMG_LINK'] . "' class='card-img-top' alt='...'>";
+            echo "  <div class='card-body'>";
+            echo "      <h5 class='card-title'>" . $album['ALBUM_TITLE'] . "</h5>";
+            echo "      <p class='card-text'>Release Date: " . $album['POST_TIME'] . "</p>";
+            echo "      <p class='card-text'>Artist: " . $album['ARTIST'] . "</p>";
+            echo "      <p class='card-text'>Rating: " . $album['RATING'] . "/5</p>";
+            echo "      <p class='card-text'>Description: " . $album['DESCRIPTION'] . "</p>";
+            echo "      <!-- <a href='#' class='btn btn-primary'>Go somewhere</a> -->";
+            echo "  </div>";
+            echo "</div>";
+            
+            $album = next($albums);
+            if(is_null($album)){
+                break;
+            }
         }
-    }
+        if(!is_null($album)) {
+            $album = next($albums);
+        }
 ?>
 </div>
 
