@@ -17,13 +17,12 @@
 if(is_null($albums)) {
     echo "<h2>Your library is empty add a new album <a href='/presentation/view/createNewAlbum.php'>HERE</a>!</h2>";
 } else {
-    $album = next($albums);
-    while(!is_null($album)) {
+    for($i = 0;$i < (count($albums) / 3);$i++) {
 ?>
 <div class="row" style="width: 100%; margin: auto;">
 
 <?php 
-        for($i = 0; $i < 3; $i++) {
+        for($j = 0; $j < 3; $i++) {
     
             echo "<div class='card' style='width: 18rem; margin: auto;'>";
             echo "  <img src='/presentation/media/" . $album['IMG_LINK'] . "' class='card-img-top' alt='...'>";
@@ -41,9 +40,6 @@ if(is_null($albums)) {
             if(is_null($album)){
                 break;
             }
-        }
-        if(!is_null($album)) {
-            $album = next($albums);
         }
 ?>
 </div>
