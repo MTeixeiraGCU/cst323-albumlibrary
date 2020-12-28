@@ -17,6 +17,7 @@
 if(is_null($albums)) {
     echo "<h2>Your library is empty add a new album <a href='/presentation/view/createNewAlbum.php'>HERE</a>!</h2>";
 } else {
+    $album = current($albums);
     for($i = 0;$i < (count($albums) / 3);$i++) {
 ?>
 <div class="row" style="width: 100%; margin: auto;">
@@ -36,8 +37,7 @@ if(is_null($albums)) {
             echo "  </div>";
             echo "</div>";
             
-            $album = next($albums);
-            if(is_null($album)){
+            if($album = next($albums)){
                 break;
             }
         }
