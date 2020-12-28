@@ -22,7 +22,7 @@ if(is_null($albums)) {
 <div class="row" style="width: 100%; margin: auto;">
 
 <?php 
-        for($j = 0; $j < 3; $i++) {
+        for($j = 0; $j < 3; $j++) {
     
             echo "<div class='card' style='width: 18rem; margin: auto;'>";
             echo "  <img src='/presentation/media/" . $album['IMG_LINK'] . "' class='card-img-top' alt='...'>";
