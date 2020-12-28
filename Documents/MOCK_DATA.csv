@@ -1,26 +1,26 @@
-ID,ALBUM_TITLE,POST_TIME,DESCRIPTION,RATING,IMG_LINK
-1,Keylex,9/9/2020,massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi,1,hills.jpg
-2,Domainer,12/21/2020,feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa,2,real.png
-3,Fintone,3/2/2020,est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis,5,hills.jpg
-4,Fix San,1/4/2020,montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem,1,headphones.jpg
-5,Redhold,9/29/2020,semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam,1,real.png
-6,Bigtax,2/9/2020,sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer,1,headphones.jpg
-7,Ventosanzap,9/30/2020,elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget,5,face.jpg
-8,Span,10/16/2020,dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante,1,star.jpg
-9,Andalax,4/12/2020,sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque,3,real.png
-10,Vagram,3/25/2020,pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet,5,asian.jpg
-11,Alpha,9/30/2020,ligula in lacus curabitur at ipsum ac tellus semper interdum mauris,2,no_image.png
-12,Stringtough,6/24/2020,nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus,2,asian.jpg
-13,Regrant,9/20/2020,tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui,4,star.jpg
-14,Fintone,5/1/2020,eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec,4,face.jpg
-15,Tresom,1/31/2020,gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum,3,face.jpg
-16,Zathin,8/28/2020,nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec,2,asian.jpg
-17,Stim,4/28/2020,quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris,3,guitar.jpg
-18,Span,2/23/2020,purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis,3,face.jpg
-19,Stim,5/17/2020,luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum,1,no_image.png
-20,Rank,3/8/2020,elementum in hac habitasse platea dictumst morbi vestibulum velit id,4,asian.jpg
-21,Konklux,8/21/2020,maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum,2,guitar.jpg
-22,Vagram,3/30/2020,vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy,2,real.png
-23,Bitwolf,9/29/2020,tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus,5,star.jpg
-24,Bitchip,12/30/2019,in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia,5,star.jpg
-25,Sonair,6/24/2020,molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna,4,no_image.png
+ID,ALBUM_TITLE,POST_TIME,DESCRIPTION,RATING,IMG_LINK,USER_EMAIL
+1,Treeflex,7/13/2020,augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit,4,no_image.png,marc@gcu.edu
+2,Tin,2/27/2020,est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in,2,asian.jpg,marc@gcu.edu
+3,Otcom,11/26/2020,interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan,2,guitar.jpg,marc@gcu.edu
+4,Zoolab,4/10/2020,semper rutrum nulla nunc purus phasellus in felis donec semper sapien a,2,star.jpg,marc@gcu.edu
+5,Bitchip,9/26/2020,ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris,3,headphones.jpg,marc@gcu.edu
+6,Namfix,3/12/2020,mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis,5,asian.jpg,marc@gcu.edu
+7,Aerified,2/25/2020,in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque,3,no_image.png,marc@gcu.edu
+8,Gembucket,8/10/2020,nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac,2,face.jpg,marc@gcu.edu
+9,Wrapsafe,6/8/2020,diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et,2,guitar.jpg,marc@gcu.edu
+10,Viva,1/10/2020,accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam,3,no_image.png,marc@gcu.edu
+11,Treeflex,9/2/2020,quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer,4,real.png,marc@gcu.edu
+12,Home Ing,9/26/2020,in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim,2,hills.jpg,marc@gcu.edu
+13,Sub-Ex,7/15/2020,scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin,2,headphones.jpg,marc@gcu.edu
+14,Keylex,4/8/2020,eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis,3,no_image.png,marc@gcu.edu
+15,Opela,4/14/2020,donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis,1,real.png,marc@gcu.edu
+16,Cookley,5/16/2020,nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet,1,real.png,marc@gcu.edu
+17,Bitwolf,12/21/2020,ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere,1,guitar.jpg,marc@gcu.edu
+18,Biodex,11/10/2020,cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel,1,real.png,marc@gcu.edu
+19,Temp,5/6/2020,nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue,2,star.jpg,marc@gcu.edu
+20,Ventosanzap,8/6/2020,mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient,3,hills.jpg,marc@gcu.edu
+21,Transcof,3/30/2020,metus vitae ipsum aliquam non mauris morbi non lectus aliquam,4,asian.jpg,marc@gcu.edu
+22,Pannier,12/30/2019,quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit,3,real.png,marc@gcu.edu
+23,Bitwolf,12/13/2020,primis in faucibus orci luctus et ultrices posuere cubilia curae donec,2,hills.jpg,marc@gcu.edu
+24,Asoka,3/21/2020,accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut,4,asian.jpg,marc@gcu.edu
+25,Zaam-Dox,6/10/2020,in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae,2,real.png,marc@gcu.edu
